@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Visualizador Automático</title>
+  <style>
+    /* --- CSS --- */
+    body {
+      margin: 0;
+      overflow: hidden; /* Evita barras de scroll */
+      background-color: #000;
+      color: #fff;
+      font-family: sans-serif;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+      cursor: pointer; /* Indica que la página es interactiva */
+    }
+
+    #canvas {
+      position: fixed;
+      left: 0;
+      top: 0;
+      width: 100%;
+      height: 100%;
+      z-index: -1; /* Pone el canvas detrás del texto inicial */
+    }
+
+    #info {
+      font-size: 1.5em;
+      text-align: center;
+      text-shadow: 2px 2px 4px rgba(0,0,0,0.8);
+      padding: 20px;
+    }
+
+    audio {
+      display: none; /* El reproductor de audio está oculto */
+    }
+  </style>
+</head>
+<body>
+
+    <div id="info">
+      <h1>Haz clic en cualquier lugar para iniciar</h1>
+    </div>
+
+    <canvas id="canvas"></canvas>
+    
+    <audio id="audio" src="madness.mp3" loop crossorigin="anonymous"></audio>
+
+    <script>
+      // --- JAVASCRIPT ---
+      window.onload = function() {
+        const audio = document.getElementById("audio");
+        const canvas = document.getElementById("canvas");
+        const info = document.getElementById("info");
+        const ctx = canvas.getContext("2d");
+        
+        // Esta función inicializa y comienza la visualización y el audio
+        function startVisualizer() {
+            // Ocultar el mensaje de inicio
+            info.style.display = 'none';
+
+            // 1. Crear el contexto de audio y los nodos necesarios
+            const context = new AudioContext();
+            const src = context.createMediaElementSource(audio);
+            const analyser = context.createAnalyser();
+
+            // 2. Conectar los nodos: audio -> analizador -> parlantes
+            src.connect(analyser);
+            analyser.connect(context.destination);
+
+            // 3. Configurar el analizador
+            analyser.fftSize = 256;
+            const bufferLength = analyser.frequencyBinCount;
+            const dataArray = new Uint8Array(bufferLength);
+            
+            // Ajustar el tamaño del canvas a la ventana
+            canvas.width = window.innerWidth;
+            canvas.height = window.innerHeight;
+            const WIDTH = canvas.width;
+            const HEIGHT = canvas.height;
+            const barWidth = (WIDTH / bufferLength) * 2.5;
+
+            // 4. Bucle de renderizado que se ejecuta en cada fotograma
+            function renderFrame() {
+                requestAnimationFrame(renderFrame); // Llama a la función en el siguiente fotograma
+                let x = 0;
+                analyser.getByteFrequencyData(dataArray); // Obtiene los datos de frecuencia
+
+                // Limpia el canvas
+                ctx.fillStyle = "#000";
+                ctx.fillRect(0, 0, WIDTH, HEIGHT);
+
+                // Dibuja cada barra del visualizador
+                for (let i = 0; i < bufferLength; i++) {
+                    const barHeight = dataArray[i];
+                    
+                    // Colores dinámicos para las barras
+                    const r = barHeight + (25 * (i / bufferLength));
+                    const g = 250 * (i / bufferLength);
+                    const b = 50;
+
+                    ctx.fillStyle = `rgb(${r},${g},${b})`;
+                    ctx.fillRect(x, HEIGHT - barHeight, barWidth, barHeight);
+
+                    x += barWidth + 1;
+                }
+            }
+
+            audio.play(); // Reproduce el audio
+            renderFrame(); // Inicia el bucle de visualización
+        }
+
+        // Se añade un listener que espera un solo clic para ejecutar todo
+        window.addEventListener('click', startVisualizer, { once: true });
+      };
+    </script>
+</body>
+</html>

@@ -1,0 +1,541 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+  <link rel="stylesheet" href="footer.css"> <!--Enlazar o llamar al archivo footer css-->
+  <link rel="stylesheet" href="carousel.css"> <!--Enlazar al archivo carousel css-->
+  <link rel="stylesheet" href="hero.css"> <!--Enlazar al archivo carousel css-->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css"> 
+</head>
+<body>
+<!--<script>
+  const backToTop = document.getElementById('backToTop');
+
+        window.addEventListener('scroll', () => {
+            if (window.pageYOffset > 300) {
+                backToTop.classList.add('visible');
+            } else {
+                backToTop.classList.remove('visible');
+            }
+        });
+
+        backToTop.addEventListener('click', () => {
+            window.scrollTo({
+                top: 0,
+                behavior: 'smooth'
+            });
+        });
+
+        // Optimisation des animations
+        let lastScrollY = 0;
+        let ticking = false;
+
+        window.addEventListener('scroll', () => {
+            lastScrollY = window.scrollY;
+
+            if (!ticking) {
+                window.requestAnimationFrame(() => {
+                    // Ici vous pourriez ajouter d'autres animations en fonction du scroll
+                    ticking = false;
+                });
+
+                ticking = true;
+            }
+        });
+
+        // Chargement différé des éléments non critiques
+        document.addEventListener('DOMContentLoaded', function () {
+            if ('IntersectionObserver' in window) {
+                const lazyElements = document.querySelectorAll('.lazy');
+
+                const lazyObserver = new IntersectionObserver((entries) => {
+                    entries.forEach((entry) => {
+                        if (entry.isIntersecting) {
+                            const lazyElement = entry.target;
+                            // Charger les éléments ici
+                            lazyObserver.unobserve(lazyElement);
+                        }
+                    });
+                });
+
+                lazyElements.forEach((lazyElement) => {
+                    lazyObserver.observe(lazyElement);
+                });
+            }
+        });
+</script>-->
+
+
+<!-- NAV BAR INICIO-->
+<nav class="navbar navbar-inverse" style="margin-bottom: 0 !important;"> <!--ESTILO INLINE (INLINE STYLE)-->
+  <div class="container-fluid">
+    <div class="navbar-header">
+      <a class="navbar-brand" href="#">AudioWebLat</a>
+    </div>
+    <ul class="nav navbar-nav">
+      <li class="active"><a href="#">Inicio</a></li>
+      <li class="dropdown"><a class="dropdown-toggle" data-toggle="dropdown" href="#">Música<span class="caret"></span></a>
+        <ul class="dropdown-menu">
+          <li><a href="#">Albumes</a></li>
+          <li><a href="#">Géneros</a></li>
+          <li><a href="#">Próximos Conciertos</a></li>
+        </ul>
+      </li>
+      <li><a href="#">Productos</a></li>
+    </ul>
+    <ul class="nav navbar-nav navbar-right">
+      <li><a href="form/form.html"><span class="glyphicon glyphicon-user"></span> Registrarse</a></li>
+      <li><a href="#"><span class="glyphicon glyphicon-log-in"></span> Ingresar</a></li>
+    </ul>
+  </div>
+</nav>
+<!-- NAV BAR FINAL-->
+
+<!-- HERO SECTION-->
+<section class="hero">
+<div class="hero-izquierda">
+<div class="texto">
+  <h1 class="titulo">Innovación <span>Digital</span></h1>
+  <p class="descripcion">Explora el futuro de la música de la mano de la tecnología</p>
+  <div class="grupo-botones">
+  <button class="boton1">Documentación</button>
+  <button class="boton2">Ver Más</button>
+  </div>
+</div>
+</div>  
+
+<div class="hero-derecha">  
+<div class="video-contenedor">
+  <video autoplay loop muted playsinline aria-label="Video"> <!--aria-label-video Sirve para habilitar los controles del video-->
+    <source src="robot1.mp4" type="video/mp4">
+  </video>
+</div>
+</div>
+</section>
+<!-- HERO SECTION FINAL-->
+
+<!-- CARROUSEL INICIO-->
+
+<!--
+<div class="container">
+  <div id="myCarousel" class="carousel slide" data-ride="carousel">
+   
+    <ol class="carousel-indicators">
+      <li data-target="#myCarousel" data-slide-to="0" class="active"></li>
+      <li data-target="#myCarousel" data-slide-to="1"></li>
+      <li data-target="#myCarousel" data-slide-to="2"></li>
+    </ol>
+
+
+    <div class="carousel-inner">
+      <div class="item active">
+        <img src="la.jpg" alt="Los Angeles" style="width:100%;">
+      </div>
+
+      <div class="item">
+        <img src="chicago.jpg" alt="Chicago" style="width:100%;">
+      </div>
+    
+      <div class="item">
+        <img src="ny.jpg" alt="New york" style="width:100%;">
+      </div>
+    </div>
+
+    <a class="left carousel-control" href="#myCarousel" data-slide="prev">
+      <span class="glyphicon glyphicon-chevron-left"></span>
+      <span class="sr-only">Previous</span>
+    </a>
+    <a class="right carousel-control" href="#myCarousel" data-slide="next">
+      <span class="glyphicon glyphicon-chevron-right"></span>
+      <span class="sr-only">Next</span>
+    </a>
+  </div>
+</div>-->
+
+<!-- CARROUSEL FINAL-->
+
+
+<!-- CLASE GRID - MALLA, CUADRO-->
+<div class="grid">
+    <div class="item item-0">0</div>
+    <div class="item item-1" onclick="window.location.href='audio/js-audio-visualizer/src/index.html'">
+      <span class="card-tag">Audio Reactive</span>
+      <h2 class="card-title">Music Visualizer</h2>
+      <div class="card-footer">
+        <p>Music Team</p>
+        <p>01.10.2025</p>
+      </div>
+    </div>
+
+    <div class="item item-2" onclick="window.location.href='bootstrap5/index.html'">
+    <div class="contenedor-tag">
+      <span class="card-tag">Responsive</span>
+      <span class="card-tag2">Templates</span>
+      <h2 class="card-title">Bootstrap 5</h2>
+      <div class="card-footer">
+        <p>Bootstrap Framework</p>
+        <p>06.10.2025</p>
+      </div>
+    </div>
+    </div>
+    <div class="item item-3">3</div>
+    <div class="item item-4">4</div>
+    <div class="item item-5">5</div>
+    <div class="item item-6">6</div>
+    <div class="item item-7" style="margin-bottom: 0;">7</div>
+</div>
+
+<!-- GRID CSS CODE -->
+
+<!-- INICIO CAROUSEL-->
+ <div class="slider">
+	<div class="slide-track">
+		<div class="slide">
+			<img src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/557257/1.png" height="100" width="250" alt="" />
+		</div>
+		<div class="slide">
+			<img src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/557257/2.png" height="100" width="250" alt="" />
+		</div>
+		<div class="slide">
+			<img src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/557257/3.png" height="100" width="250" alt="" />
+		</div>
+		<div class="slide">
+			<img src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/557257/4.png" height="100" width="250" alt="" />
+		</div>
+		<div class="slide">
+			<img src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/557257/5.png" height="100" width="250" alt="" />
+		</div>
+		<div class="slide">
+			<img src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/557257/6.png" height="100" width="250" alt="" />
+		</div>
+		<div class="slide">
+			<img src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/557257/7.png" height="100" width="250" alt="" />
+		</div>
+		<div class="slide">
+			<img src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/557257/1.png" height="100" width="250" alt="" />
+		</div>
+		<div class="slide">
+			<img src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/557257/2.png" height="100" width="250" alt="" />
+		</div>
+		<div class="slide">
+			<img src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/557257/3.png" height="100" width="250" alt="" />
+		</div>
+		<div class="slide">
+			<img src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/557257/4.png" height="100" width="250" alt="" />
+		</div>
+		<div class="slide">
+			<img src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/557257/5.png" height="100" width="250" alt="" />
+		</div>
+		<div class="slide">
+			<img src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/557257/6.png" height="100" width="250" alt="" />
+		</div>
+		<div class="slide">
+			<img src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/557257/7.png" height="100" width="250" alt="" />
+		</div>
+	</div>
+</div>
+
+<!-- FINAL CAROUSEL-->
+
+    <!-- INICIO PIE DE PAGINA -->
+    <footer id="footer">
+        <div class="container">
+            <div class="footer-grid">
+                <!-- Colonne 1 - À propos -->
+                <div class="footer-column">
+                    <h3>Nosotros</h3>
+                    <p>Apasionados por la música, te traemos las últimas noticias, reseñas y descubrimientos de la escena musical global. Somos el punto de encuentro para artistas, fans y creadores.</p>
+                    <div class="social-links">
+                        <a href="#" class="social-link" aria-label="Facebook" style="text-decoration: none;"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#" class="social-link" aria-label="Twitter" style="text-decoration: none;"><i class="fab fa-twitter"></i></a>
+                        <a href="#" class="social-link" aria-label="Instagram" style="text-decoration: none;"><i class="fab fa-instagram"></i></a>
+                        <a href="#" class="social-link" aria-label="LinkedIn" style="text-decoration: none;"><i class="fab fa-linkedin-in"></i></a>
+                        <a href="#" class="social-link" aria-label="YouTube" style="text-decoration: none;"><i class="fab fa-youtube"></i></a>
+                    </div>
+                </div>
+
+         
+
+                <!-- Colonne 2 - Liens rapides -->
+                <div class="footer-column">
+                    <h3>Explorar</h3>
+                    <ul class="footer-links">
+                        <li><a href="#">Inicio</a></li>
+                        <li><a href="#">Lanzamientos</a></li>
+                        <li><a href="#">Reseñas</a></li>
+                        <li><a href="#">Entrevistas</a></li>
+                        <li><a href="#">Cociertos</a></li>
+                        <li><a href="#">Noticias</a></li>
+                    </ul>
+                </div>
+
+                <!-- Colonne 3 - Support -->
+                <div class="footer-column">
+                    <h3>Comunidad</h3>
+                    <ul class="footer-links">
+                        <li><a href="#">Centro de Ayuda</a></li>
+                        <li><a href="#">Preguntas Frecuentes</a></li> <!--Frecuent Asked Questions-->
+                        <li><a href="#">Colabora con nosotros</a></li>
+                        <li><a href="#">Política de Privacidad</a></li>
+                        <li><a href="#">Términos de Uso</a></li>
+                        <li><a href="#">Accesibilidad</a></li>
+                    </ul>
+                </div>
+
+                <!-- Colonne 4 - Contact -->
+                <div class="footer-column">
+                    <h3>Contacto</h3>
+
+                    <div class="contact-info">
+                        <div class="contact-item">
+                            <i class="fas fa-map-marker-alt"></i>
+                            <span><strong>Para consultas generales:</strong><br>info@tuwebdemusica.com</span>
+                        </div>
+
+                        <div class="contact-item">
+                            <i class="fas fa-phone-alt"></i>
+                            <span><strong>Para enviar tu música:</strong><br>demos@tuwebdemusica.com</span>
+                        </div>
+
+                        <div class="contact-item">
+                            <i class="fas fa-envelope" style="text-decoration: none;"></i>
+                            <span><strong>Publicidad y Prensa:</strong><br>prensa@tuwebdemusica.com</span>
+                        </div>
+                    </div>
+
+                    <div class="newsletter">
+                        <form class="newsletter-form">
+                            <input type="email" class="newsletter-input" placeholder="Escriba Su Email"
+                                aria-label="Votre adresse email" required>
+                            <button type="submit" class="newsletter-btn">Enviar</button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+
+            <div class="copyright">
+                <p>&copy;
+                    <script>document.write(new Date().getFullYear())</script>© 2023 ElNombreDeTuWeb. Todos los derechos reservados<a
+                        href="#"> | Aviso Legal</a> | <a href="#">Política de Cookies</a>
+                </p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Bouton retour en haut -->
+    <div class="back-to-top" id="backToTop" aria-label="Retour en haut">
+        <i class="fas fa-arrow-up"></i>
+    </div>
+
+
+<!--FINAL PIE DE PAGINA-->
+
+
+<style>
+  body{
+    background-color: #000000;
+  }
+  .grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    grid-template-rows: repeat(8, 1fr);
+    gap: 8px;
+    /*Centrar el gridlayout*/
+    width: 95%;
+    max-width: 1500px;
+    margin: 0 auto;
+    /*Centrar el gridlayout*/
+  }
+  .item {
+    background-color: #444;
+    color: #fff;
+    border-radius: 5px;
+    padding: 20px;
+    font-size: 150%;
+    line-height: 80px; /*Modificamos el alto de la tarjeta*/
+  }
+  .mobile-only {
+    display: block;
+  }
+  .desktop-only {
+    display: none;
+  }
+    .item-0 {
+      margin-top: 20px;
+      grid-column: 1 / span 4;
+      grid-row: 1;
+    }
+    
+    .item-1 {
+      grid-column: 1 / span 4;
+      grid-row: 2 / span 2;
+      padding-top: 0 ;
+    }
+
+       .item-0:hover{
+      background-image: linear-gradient(to right top, #1645c9, #2e40d4, #4438dd, #5a2be5, #7012eb);
+    }
+
+
+    .item-1:hover{
+      background-image: linear-gradient(to right top, #1645c9, #2e40d4, #4438dd, #5a2be5, #7012eb);
+    }
+
+    
+    .item-2:hover{
+      background-image: linear-gradient(to right top, #1645c9, #2e40d4, #4438dd, #5a2be5, #7012eb);
+    }
+
+       .item-3:hover{
+      background-image: linear-gradient(to right top, #1645c9, #2e40d4, #4438dd, #5a2be5, #7012eb);
+    }
+
+    
+    .item-4:hover{
+      background-image: linear-gradient(to right top, #1645c9, #2e40d4, #4438dd, #5a2be5, #7012eb);
+    }
+
+         .item-5:hover{
+      background-image: linear-gradient(to right top, #1645c9, #2e40d4, #4438dd, #5a2be5, #7012eb);
+    }
+
+    
+    .item-6:hover{
+      background-image: linear-gradient(to right top, #1645c9, #2e40d4, #4438dd, #5a2be5, #7012eb);
+    }
+
+
+      .item-7:hover{
+      background-image: linear-gradient(to right top, #1645c9, #2e40d4, #4438dd, #5a2be5, #7012eb);
+    }
+
+
+    /*Estilo Tarjeta*/
+
+    .card-tag{
+        background-color: rgb(35, 81, 180);
+        font-weight: 600; /*negrilla*/
+        padding: 5px;
+        border-radius: 4px;
+        font-size: 1.5rem;
+        line-height: 1.2;
+    }
+
+     .card-tag2{
+        margin-left: 10px;
+        background-color: rgb(103, 35, 180);
+        font-weight: 600; /*negrilla*/
+        padding: 5px;
+        border-radius: 4px;
+        font-size: 1.5rem;
+        line-height: 1.2;
+    }
+
+    .card-title{
+        font-size: 2.4rem;
+        margin-bottom: 8rem;
+    }
+
+    .card-footer p{
+        margin: 0;
+        font-size: 1.2rem;
+        line-height: 1.8; /*Eliminar espaciado entre parrafos*/
+        color: #cccccc;
+    }
+
+
+    /*Estilo Tarjeta*/
+    
+    .item-2 {
+      grid-column: 1 / span 4;
+      grid-row: 4 / span 2;
+      padding-top: 0 ;
+    }
+    
+    .item-3 {
+      grid-column: 1 / span 2;
+      grid-row: 6;
+    }
+    
+    .item-4 {
+      grid-column: 3 / span 2;
+      grid-row: 6;
+    }
+    
+    .item-5 {
+      grid-column: 1 / span 2;
+      grid-row: 7;
+    }
+    
+    .item-6 {
+      grid-column: 3 / span 2;
+      grid-row: 7;
+    }
+    
+    .item-7 {
+      grid-column: 1 / span 4;
+      grid-row: 8;
+    }
+    @media (min-width: 768px) {
+    .grid {
+      grid-template-columns: repeat(4, 1fr);
+      grid-template-rows: repeat(5, 1fr);
+      gap: 8px;
+    }
+    .mobile-only {
+      display: none;
+    }
+    .desktop-only {
+      display: block;
+    }
+    
+    .item-0 {
+      grid-column: 1 / span 4;
+      grid-row: 1;
+    }
+    
+    .item-1 {
+      grid-column: 1 / span 2;
+      grid-row: 2 / span 2;
+    }
+    
+    .item-2 {
+      grid-column: 3 / span 2;
+      grid-row: 2 / span 2;
+    }
+    
+    .item-3 {
+      grid-column: 1;
+      grid-row: 4;
+    }
+    
+    .item-4 {
+      grid-column: 2;
+      grid-row: 4;
+    }
+    
+    .item-5 {
+      grid-column: 3;
+      grid-row: 4;
+    }
+    
+    .item-6 {
+      grid-column: 4;
+      grid-row: 4;
+    }
+    
+    .item-7 {
+      grid-column: 1 / span 4;
+      grid-row: 5;
+    }
+    
+  }
+
+</style>
+</body>
+</html>
